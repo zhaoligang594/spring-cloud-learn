@@ -15,6 +15,13 @@
     <dependencies>
 
 
+        <!--  spring-cloud-starter-openfeign  -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-openfeign</artifactId>
+        </dependency>
+
+
         <!--  netflix-ribbon  -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
