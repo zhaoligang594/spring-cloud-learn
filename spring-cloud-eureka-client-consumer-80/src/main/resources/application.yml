@@ -1,0 +1,15 @@
+server:
+  port: 80
+spring:
+  application:
+    name: cloud-eureka-client-consumer
+eureka:
+  instance:
+    instance-id: ${spring.application.name}:${server.port}
+    prefer-ip-address: true
+  client:
+    service-url:
+      defaultZone: http://peer1:7001/eureka/,http://peer2:7002/eureka/ # 服务的注册中心 高可用的模式
+    register-with-eureka: true
+    fetch-registry: true
+
