@@ -11,7 +11,9 @@ import org.springframework.web.client.RestTemplate;
  */
 @RestController
 public class EurekaConsumerController {
-    private static final String REQUEST_URL = "http://localhost:8001/";
+
+    // CLOUD-EUREKA-CLIENT-PROVIDER 是我们的服务提供者的名字
+    private static final String REQUEST_URL = "http://CLOUD-EUREKA-CLIENT-PROVIDER";
     @Autowired
     private RestTemplate restTemplate;
     @GetMapping("/consumer/getServerPort")

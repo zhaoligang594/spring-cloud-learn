@@ -12,6 +12,7 @@
     <module>spring-cloud-eureka-server-7002</module>
       <module>spring-cloud-eureka-client-provider-8001</module>
       <module>spring-cloud-eureka-client-consumer-80</module>
+      <module>spring-cloud-eureka-client-provider-8002</module>
   </modules>
   <packaging>pom</packaging>
 

@@ -1,0 +1,14 @@
+server:
+  port: 8002 # 配置端口号
+eureka:
+  client:
+    register-with-eureka: true # 是否向注册中心注册自己
+    fetch-registry: true # 是否拉去相关配置信息
+    service-url:
+      defaultZone: http://peer1:7001/eureka/,http://peer2:7002/eureka/  # 服务的注册中心 高可用的模式
+  instance:
+    prefer-ip-address: true # 是否展示真实的自己的IP
+    instance-id: ${spring.application.name}:${server.port} # 自己服务的实例的名称
+spring:
+  application:
+    name: cloud-eureka-client-provider # 服务的名称

@@ -10,24 +10,15 @@
     <modelVersion>4.0.0</modelVersion>
     <packaging>jar</packaging>
 
-    <artifactId>spring-cloud-eureka-client-consumer-80</artifactId>
+    <artifactId>spring-cloud-eureka-client-provider-8002</artifactId>
 
     <dependencies>
-
-
-        <!--  netflix-ribbon  -->
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-netflix-ribbon</artifactId>
-        </dependency>
-
         <!-- 以后所有的操作都是带有stater  -->
         <!--   netflix-eureka-client    -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
         </dependency>
-
         <!--   引入spring-boot支持的依赖  -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
