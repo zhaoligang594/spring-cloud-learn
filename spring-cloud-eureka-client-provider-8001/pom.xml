@@ -14,12 +14,22 @@
     <artifactId>spring-cloud-eureka-client-provider-8001</artifactId>
 
     <dependencies>
-        <!-- 以后所有的操作都是带有stater  -->
-        <!--   netflix-eureka-client    -->
+
+
+        <!--   consul-discovery  -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+            <artifactId>spring-cloud-starter-consul-discovery</artifactId>
         </dependency>
+
+
+        <!-- 以后所有的操作都是带有stater  -->
+        <!--   netflix-eureka-client    -->
+        <!--<dependency>-->
+            <!--<groupId>org.springframework.cloud</groupId>-->
+            <!--<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>-->
+        <!--</dependency>-->
+
         <!--   引入spring-boot支持的依赖  -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
