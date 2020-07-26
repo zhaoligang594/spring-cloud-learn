@@ -4,10 +4,13 @@ spring:
   application:
     name: cloud-eureka-client-consumer
   cloud:
+    # 配置zookeeper 的地址
+    zookeeper:
+      connect-string: 192.168.31.66:2181
     # consul 的相关配置
-    consul:
-      host: 192.168.31.66
-      port: 8500
+#    consul:
+#      host: 192.168.31.66
+#      port: 8500
 #eureka:
 #  instance:
 #    instance-id: ${spring.application.name}:${server.port}
