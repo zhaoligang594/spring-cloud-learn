@@ -1,0 +1,23 @@
+server:
+  port: 3355
+spring:
+  application:
+    name: cloud-config-client
+  cloud:
+    config:
+      label: master  # label
+      name: config   # name
+      profile: dev   # 哪一个
+      uri: http://config:3344 # 合在一起：http://config:3344/master/config-dev.yml
+eureka:
+  client:
+    service-url:
+      defaultZone: http://peer1:7001/eureka/
+# 下面属于动态刷新的部分
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+# 之后配合 @RefreshScope
+#用 curl -X POST "http://localhost:3355/actuator/refresh" 手动进行刷新
