@@ -3,21 +3,28 @@ server:
 spring:
   application:
     name: cloud-eureka-client-consumer
-  cloud:
-    # 配置zookeeper 的地址
-    zookeeper:
-      connect-string: 192.168.31.66:2181
+#  cloud:
+#    # 配置zookeeper 的地址
+#    zookeeper:
+#      connect-string: 192.168.31.66:2181
     # consul 的相关配置
 #    consul:
 #      host: 192.168.31.66
 #      port: 8500
-#eureka:
-#  instance:
-#    instance-id: ${spring.application.name}:${server.port}
-#    prefer-ip-address: true
-#  client:
-#    service-url:
-#      defaultZone: http://peer1:7001/eureka/,http://peer2:7002/eureka/ # 服务的注册中心 高可用的模式
-#    register-with-eureka: true
-#    fetch-registry: true
-
+eureka:
+  instance:
+    instance-id: ${spring.application.name}:${server.port}
+    prefer-ip-address: true
+  client:
+    service-url:
+      #defaultZone: http://peer1:7001/eureka/,http://peer2:7002/eureka/ # 服务的注册中心 高可用的模式
+      defaultZone: http://peer1:7001/eureka/  # 服务的注册中心 单机版模式
+    register-with-eureka: true
+    fetch-registry: true
+# 配置请求的超时时间
+ribbon:
+  ReadTimeout: 5000
+  ConnectTimeout: 5000
+feign:
+  hystrix:
+    enabled: true # 首先在配置文件上开启配置 支持 服务降级
