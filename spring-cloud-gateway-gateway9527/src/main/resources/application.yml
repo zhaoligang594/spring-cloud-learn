@@ -1,0 +1,29 @@
+server:
+  port: 9527
+spring:
+  application:
+    name: cloud-gateway-gate
+  cloud:
+    gateway:
+      enabled: true # 是否开启gateway的功能，默认是你开启的状态
+      routes:
+      - id: consumer_routh # 路由的ID ，没有固定的要求，但是唯一 建议使用服务名
+        #uri:  http://localhost:80/
+        uri:  lb://CLOUD-EUREKA-CLIENT-CONSUMER # 根据服务名动态的配置 实现 动态配置路由的目的
+        predicates:
+        - Path=/consumer/feign/**
+      discovery:
+        locator:
+          # 如果不是动态的路由，这里可以不需要进行开启的
+          enabled: true # Flag that enables DiscoveryClient gateway integration
+
+eureka:
+  instance:
+    instance-id: ${spring.application.name}:${server.port}
+    prefer-ip-address: true
+  client:
+    service-url:
+      #defaultZone: http://peer1:7001/eureka/,http://peer2:7002/eureka/ # 服务的注册中心 高可用的模式
+      defaultZone: http://peer1:7001/eureka/  # 服务的注册中心 单机版模式
+    register-with-eureka: true
+    fetch-registry: true
