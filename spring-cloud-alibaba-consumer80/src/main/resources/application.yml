@@ -1,0 +1,16 @@
+server:
+  port: 80 # 项目的端口号
+spring:
+  application:
+    name: nacos-consumer-80
+  cloud:
+    nacos:
+      discovery:
+        enabled: true # 是否惊醒服务注册与发现
+        service: ${spring.application.name} # 服务的名字 默认  ${spring.application.name}
+        server-addr: 127.0.0.1:8848 # 服务的注册地址
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

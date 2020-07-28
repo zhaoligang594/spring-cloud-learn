@@ -16,6 +16,8 @@
       <module>spring-cloud-gateway-gateway9527</module>
     <module>spring-cloud-config-config3344</module>
     <module>spring-cloud-config-client-3355</module>
+    <module>spring-cloud-alibaba-provider8001</module>
+      <module>spring-cloud-alibaba-consumer80</module>
   </modules>
   <packaging>pom</packaging>
 

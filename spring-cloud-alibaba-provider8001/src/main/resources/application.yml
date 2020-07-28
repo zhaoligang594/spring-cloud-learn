@@ -1,0 +1,3 @@
+spring:
+  profiles: # 当前的环境
+    active: dev
