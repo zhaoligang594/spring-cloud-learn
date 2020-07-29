@@ -10,28 +10,28 @@
     <modelVersion>4.0.0</modelVersion>
     <packaging>jar</packaging>
 
-    <artifactId>spring-cloud-config-config3344</artifactId>
+    <artifactId>spring-cloud-config-client-3366</artifactId>
 
     <dependencies>
-
-
+        <!--  添加消息总线的支持   -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-bus-amqp</artifactId>
         </dependency>
 
-        <!--  spring-cloud-config-server 服务的配置中心   -->
+        <!--  客户端的配置方式  -->
+        <!--  spring-cloud-config 服务的配置中心  注意与服务的配置中心引入的是不同的依赖  -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-config-server</artifactId>
+            <artifactId>spring-cloud-starter-config</artifactId>
         </dependency>
-        <!-- 以后所有的操作都是带有stater  -->
-        <!--   netflix-eureka-client    -->
+
+        <!-- erureka-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
         </dependency>
-        <!--   引入spring-boot支持的依赖  -->
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
@@ -57,5 +57,7 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
+
+
 
 </project>
