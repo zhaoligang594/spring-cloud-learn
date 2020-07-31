@@ -1,0 +1,35 @@
+server:
+  port: 8005
+spring:
+  application:
+    name: cloud-stream-sink
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: guest
+    password: guest
+  cloud:
+    stream:
+      binders:
+        defaultRabbitMq:
+          type: rabbit
+          environment:
+            # 下面的配置与 直接配置是类似的
+            spring:
+              rabbitmq:
+               host: 127.0.0.1 # 地址的配置
+               port: 5672
+               username: guest
+               password: guest
+      bindings:
+        input:
+          destination: studyExcehange # 表示用exchange的名称定义
+          content-type: application/json
+          binder: defaultRabbitMq # 设置绑定消息的具体的设置
+          group: group_A
+eureka:
+  client:
+    service-url:
+      defaultZone: http://peer1:7001/eureka/ # 服务的注册中心地址
+    fetch-registry: true
+    register-with-eureka: true

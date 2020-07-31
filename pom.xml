@@ -19,6 +19,9 @@
     <module>spring-cloud-alibaba-provider8001</module>
       <module>spring-cloud-alibaba-consumer80</module>
       <module>spring-cloud-config-client-3366</module>
+      <module>spring-cloud-stream-source8004</module>
+      <module>spring-cloud-stream-sink8005</module>
+      <module>spring-cloud-stream-sink8006</module>
   </modules>
   <packaging>pom</packaging>
 
