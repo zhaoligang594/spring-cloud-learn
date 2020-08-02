@@ -14,6 +14,22 @@
 
     <dependencies>
 
+        <!--   sentinel-datasource-nacos 后面的持久化会用到的  -->
+        <!--
+                持久化的用到的地方
+         -->
+        <dependency>
+            <groupId>com.alibaba.csp</groupId>
+            <artifactId>sentinel-datasource-nacos</artifactId>
+        </dependency>
+
+        <!--   spring-cloud-starter-alibaba-sentinel  -->
+
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-sentinel</artifactId>
+        </dependency>
+
 
         <!--  nacos-discovery 服务发现    -->
 

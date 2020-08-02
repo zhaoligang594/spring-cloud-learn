@@ -15,7 +15,20 @@ spring:
         server-addr:  127.0.0.1:8848 # 服务的地址
         file-extension: yaml
         #prefix: client # 默认 ${spring.application.name}
-        # cloud-alibaba-prvider-dev.yaml
+            # cloud-alibaba-prvider-dev.yaml
+    sentinel:
+      transport:
+        dashboard: 127.0.0.1:8080 # 配置sentinel的 dashboard 的地址
+        port: 8791 # 默认的端口是 8791 如果被占用 将会进行 +1 的扫描的操作，直至找到没有占用的端口
+      # 增加数据源的配置
+      datasource:
+        ds1:
+          nacos:
+           server-addr: 127.0.0.1:8848
+           dataId: cloud-alibaba-prvider
+           groupId: DEFAULT_GROUP
+           data-type: json
+           rule-type: flow
 management:
   endpoints:
     web:
