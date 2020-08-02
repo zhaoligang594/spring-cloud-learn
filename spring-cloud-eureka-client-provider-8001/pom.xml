@@ -51,6 +51,16 @@
             <!--<artifactId>spring-cloud-starter-consul-discovery</artifactId>-->
         <!--</dependency>-->
 
+        <!--
+               引入 zipkin 分布式链路跟踪
+
+               包含了sleuth+zipkin
+        -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-zipkin</artifactId>
+        </dependency>
+
 
         <!--   netflix-hystrix  -->
         <dependency>

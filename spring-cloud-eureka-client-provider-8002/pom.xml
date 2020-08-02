@@ -13,6 +13,18 @@
     <artifactId>spring-cloud-eureka-client-provider-8002</artifactId>
 
     <dependencies>
+
+
+        <!--
+               引入 zipkin 分布式链路跟踪
+
+               包含了sleuth+zipkin
+        -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-zipkin</artifactId>
+        </dependency>
+
         <!-- 以后所有的操作都是带有stater  -->
         <!--   netflix-eureka-client    -->
         <dependency>
